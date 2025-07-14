@@ -1,55 +1,100 @@
 body {
-    background: #f4f6fb;
-    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    font-family: 'Segoe UI', Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
 }
+
 .signup-container {
     background: #fff;
     padding: 2rem 2.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-    width: 350px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    width: 370px;
+    animation: fadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
 .signup-container h2 {
     margin-bottom: 1.5rem;
-    color: #333;
+    color: #5f2c82;
     text-align: center;
+    letter-spacing: 1px;
 }
+
 .form-group {
     margin-bottom: 1.2rem;
 }
+
 label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #555;
+    color: #7b4397;
+    font-weight: 500;
 }
+
 input[type="email"], input[type="password"] {
     width: 100%;
     padding: 0.7rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1.5px solid #e0c3fc;
+    border-radius: 7px;
     font-size: 1rem;
+    background: #f8fafc;
+    transition: border 0.2s, box-shadow 0.2s;
 }
+input[type="email"]:focus, input[type="password"]:focus {
+    border: 1.5px solid #7b4397;
+    outline: none;
+    box-shadow: 0 0 0 2px #e0c3fc55;
+}
+
 .error {
     color: #e74c3c;
     font-size: 0.95rem;
     margin-bottom: 0.5rem;
+    min-height: 1.2em;
 }
+
 button {
     width: 100%;
-    padding: 0.8rem;
-    background: #4f8cff;
+    padding: 0.85rem;
+    background: linear-gradient(90deg, #7b4397 0%, #dc2430 100%);
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 7px;
     font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(220,36,48,0.08);
+    transition: background 0.3s, transform 0.15s, box-shadow 0.2s;
+    animation: popIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 button:hover {
-    background: #2563eb;
+    background: linear-gradient(90deg, #dc2430 0%, #7b4397 100%);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 16px rgba(123,67,151,0.12);
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 } 
